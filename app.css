@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 40px;
+  background-color: black;
+  .card {
+    background-color: grey;
+    height: 300px;
+    width: 300px;
+    /* cursor: none; */
+  }
+  #follower {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: limegreen;
+    border-radius: 50%;
+    pointer-events: none;
+    font-size: 20px;
+    color: black;
+    display: none;
+  }
+  .enter {
+    display: block !important;
+    animation: growAnime 200ms ease-in forwards;
+  }
+  .leave {
+    animation: shrinkIn 200ms ease-in forwards;
+  }
+}
+
+@keyframes growAnime {
+  from {
+    scale: 0.1;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+@keyframes shrinkIn {
+  to {
+    scale: 0.1;
+    opacity: 0.1;
+    display: none !important;
+  }
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.box {
+  font-size: 100px;
+  position: relative;
+  color: red;
+  & > span {
+    position: relative;
+  }
+  .first {
+  }
+  .second {
+    top: 2rem;
+  }
+  .third {
+  }
+  .forth {
+    top: 2rem;
+    left: -1rem;
+  }
+  .symbol {
+    position: absolute;
+    color: white;
+    left: 42%;
+    top: 2rem;
+  }
+  animation: shrink 2s ease-in-out infinite;
+}
+
+@keyframes shrink {
+  to {
+    font-size: 40px;
+  }
+}
